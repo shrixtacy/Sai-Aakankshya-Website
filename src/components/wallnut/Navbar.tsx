@@ -115,15 +115,15 @@ export default function Navbar() {
         </button>
       )}
 
-      {/* Full Page Menu Overlay */}
+      {/* Full Page Menu Overlay — slides in from RIGHT */}
       <div
         className={`fixed inset-0 z-40 bg-[#202A30] transition-transform duration-700 ease-in-out ${
-          menuOpen ? 'translate-x-0' : '-translate-x-full'
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         <div className="flex h-full">
           {/* Left Column - Contact Info */}
-          <div className="hidden lg:flex flex-col justify-between w-80 border-r border-white/10 p-12">
+          <div className="hidden lg:flex flex-col justify-between w-80 border-r border-white/10 p-12 pt-28">
             <div>
               <div className="flex items-center gap-3 mb-6">
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="#FDC41F" xmlns="http://www.w3.org/2000/svg">
@@ -158,25 +158,43 @@ export default function Navbar() {
           </div>
 
           {/* Right Column - Nav Links */}
-          <div className="flex flex-col justify-center flex-1 p-12">
-            <nav className="space-y-1 mb-12">
-              {navLinks?.map((link) => (
+          <div className="flex flex-col justify-center items-center flex-1 px-12 py-24">
+            <nav className="space-y-1 mb-12 text-center">
+              {navLinks?.map((link, i) => (
                 <Link
                   key={link?.href}
                   href={link?.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block text-white/80 hover:text-white transition-colors"
-                  style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)', fontWeight: 600, lineHeight: 1.1 }}
+                  className="block text-white/80 hover:text-white"
+                  style={{
+                    fontSize: 'clamp(2.5rem, 5vw, 5rem)',
+                    fontWeight: 600,
+                    lineHeight: 1.1,
+                    opacity: menuOpen ? 1 : 0,
+                    transform: menuOpen ? 'translateX(0)' : 'translateX(40px)',
+                    transitionProperty: 'opacity, transform, color',
+                    transitionDuration: '0.5s',
+                    transitionTimingFunction: 'cubic-bezier(0.22,1,0.36,1)',
+                    transitionDelay: `${i * 0.06}s`,
+                  }}
                 >
                   {link?.label}
                 </Link>
               ))}
             </nav>
-            <div className="h-px bg-white/10 mb-8" />
+            <div className="h-px bg-white/10 mb-8 w-full" />
             <Link
               href="/contact"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex items-center gap-3 bg-[#FDC41F] text-[#202A30] font-semibold px-6 py-3 text-sm hover:bg-[#e6b01a] transition-colors w-fit"
+              className="inline-flex items-center gap-3 bg-[#FDC41F] text-[#202A30] font-semibold px-6 py-3 text-sm hover:bg-[#e6b01a]"
+              style={{
+                opacity: menuOpen ? 1 : 0,
+                transform: menuOpen ? 'translateX(0)' : 'translateX(40px)',
+                transitionProperty: 'opacity, transform',
+                transitionDuration: '0.5s',
+                transitionTimingFunction: 'cubic-bezier(0.22,1,0.36,1)',
+                transitionDelay: '0.35s',
+              }}
             >
               Request a quote
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">

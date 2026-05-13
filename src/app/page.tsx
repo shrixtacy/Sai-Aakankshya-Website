@@ -1,6 +1,7 @@
 import Navbar from '@/components/wallnut/Navbar';
 import HeroSection from '@/components/wallnut/HeroSection';
 import AboutSection from '@/components/wallnut/AboutSection';
+import ScrollVideoSection from '@/components/wallnut/ScrollVideoSection';
 import ServicesSection from '@/components/wallnut/ServicesSection';
 import PortfolioSection from '@/components/wallnut/PortfolioSection';
 import TimelineSection from '@/components/wallnut/TimelineSection';
@@ -28,6 +29,9 @@ export default function HomePage() {
 
       {/* Timeline / Process Section */}
       <TimelineSection />
+
+      {/* Scroll Video Section — FROM CONCEPT TO COMPLETION */}
+      <ScrollVideoSection />
 
       {/* Team Section */}
       <TeamSection />

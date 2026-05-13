@@ -10,7 +10,7 @@ const projects = [
     type: 'Airport Infrastructure',
     year: '2022',
     location: 'New Delhi',
-    image: 'https://images.pexels.com/photos/1004409/pexels-photo-1004409.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: '/assets/images/Delhi T1.jpeg',
   },
   {
     id: 2,
@@ -18,15 +18,15 @@ const projects = [
     type: 'Airport Infrastructure',
     year: '2021',
     location: 'Hyderabad',
-    image: 'https://images.pexels.com/photos/2026324/pexels-photo-2026324.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.13 PM.jpeg',
   },
   {
     id: 3,
-    name: 'KIIT University',
-    type: 'Institutional',
-    year: '2020',
-    location: 'Bhubaneswar',
-    image: 'https://images.pexels.com/photos/256490/pexels-photo-256490.jpeg?auto=compress&cs=tinysrgb&w=800'
+    name: 'Kempegowda International Airport',
+    type: 'Airport Infrastructure',
+    year: '2022',
+    location: 'Bangalore',
+    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.14 PM.jpeg',
   },
   {
     id: 4,
@@ -34,7 +34,7 @@ const projects = [
     type: 'Hospitality',
     year: '2022',
     location: 'Tangi, Odisha',
-    image: 'https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: '/assets/images/coconut peninsula resort.jpg',
   },
   {
     id: 5,
@@ -42,16 +42,16 @@ const projects = [
     type: 'Public Infrastructure',
     year: '2023',
     location: 'India',
-    image: 'https://images.pexels.com/photos/1838640/pexels-photo-1838640.jpeg?auto=compress&cs=tinysrgb&w=800'
+    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.19 PM.jpeg',
   },
   {
     id: 6,
-    name: 'Nandankanan Zoological Park',
-    type: 'Government',
+    name: 'DN Regalia Mall',
+    type: 'Commercial',
     year: '2023',
     location: 'Bhubaneswar',
-    image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=800'
-  }
+    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.20 PM.jpeg',
+  },
 ];
 
 export default function PortfolioSection() {
