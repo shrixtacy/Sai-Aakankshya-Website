@@ -183,11 +183,11 @@ export default function AboutPage() {
             <span style={{ color: GOLD }}>Better</span>
           </h1>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'end' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-end">
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 'clamp(1rem,1.5vw,1.1rem)', lineHeight: 1.75 }}>
               Since 2021, SAI AAKANKSHYA ASSOCIATES has been delivering premium interior, exterior, ceiling, cladding, and civil construction projects across India — led by 28 years of industry expertise.
             </p>
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <div className="flex justify-start lg:justify-end">
               <Link href="/contact" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
                 background: GOLD, color: DARK,
@@ -229,7 +229,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <Eyebrow label="Our Story" />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', marginBottom: '4rem', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 mb-16 items-start">
             <FadeUp>
               <h2 style={{
                 color: DARK,
@@ -306,11 +306,11 @@ export default function AboutPage() {
       {/* ══ INDUSTRIES WE SERVE — white ══ */}
       <section style={{ padding: `5rem ${PAD}`, background: WHITE, borderTop: `1px solid ${DIM}` }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20 items-start">
 
             {/* sticky left */}
             <FadeUp>
-              <div style={{ position: 'sticky', top: '6rem' }}>
+              <div className="lg:sticky lg:top-24 mb-8 lg:mb-0">
                 <Eyebrow label="Industries We Serve" />
                 <h2 style={{ color: DARK, fontSize: 'clamp(2rem,3.5vw,3.2rem)', fontWeight: 800, lineHeight: 1.1, letterSpacing: '-0.03em', marginBottom: '1.5rem' }}>
                   Sectors we<br />
@@ -382,7 +382,7 @@ export default function AboutPage() {
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <Eyebrow label="Strategic Partnerships" />
 
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', marginBottom: '4rem', alignItems: 'end' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20 mb-16 items-end">
             <FadeUp>
               <h2 style={{ color: DARK, fontSize: 'clamp(1.8rem,3vw,3rem)', fontWeight: 800, lineHeight: 1.15, letterSpacing: '-0.03em' }}>
                 We collaborate with{' '}
@@ -472,7 +472,7 @@ export default function AboutPage() {
       <section style={{ padding: `5rem ${PAD}`, background: DARK, borderTop: `1px solid ${DIM}` }}>
         <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
           <FadeUp>
-            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '3rem' }}>
+            <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
               <div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                   <svg width="10" height="10" viewBox="0 0 12 12"><circle cx="6" cy="6" r="6" fill={GOLD} /></svg>

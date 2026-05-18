@@ -211,12 +211,6 @@ main {
     height: 100svh;
   }
   
-  /* Ensure all sections have proper mobile padding */
-  section {
-    padding-left: clamp(1.25rem, 4vw, 2rem) !important;
-    padding-right: clamp(1.25rem, 4vw, 2rem) !important;
-  }
-  
   /* Prevent text overflow */
   h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
@@ -257,14 +251,5 @@ main {
 }
 
 @media (max-width: 640px) {
-  /* Extra small screens - even tighter spacing */
-  section {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-  
-  /* Reduce padding on cards/boxes */
-  [style*="padding"] {
-    padding: clamp(1.5rem, 4vw, 2rem) !important;
-  }
+  /* Mobile-specific adjustments handled via Tailwind classes */
 }
