@@ -90,7 +90,7 @@ export default function ServicesPage() {
             <span style={{ color: GOLD }}>to Inauguration</span>
           </h1>
 
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem' }}>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 lg:gap-8">
             <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 'clamp(1rem,1.5vw,1.1rem)', lineHeight: 1.75, maxWidth: '52ch' }}>
               End-to-end infrastructure execution — from precision ceiling systems and wall cladding to civil construction and smart automation — delivered across India.
             </p>
@@ -228,38 +228,40 @@ export default function ServicesPage() {
         background: DARK,
         borderTop: '1px solid rgba(105,137,150,0.2)',
       }}>
-        <div style={{ maxWidth: '1440px', margin: '0 auto', display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem' }}>
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-              <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill={GOLD} /></svg>
-              <span style={{ color: 'rgba(253,196,31,0.7)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase' }}>
-                Let's Build Together
-              </span>
+        <div style={{ maxWidth: '1440px', margin: '0 auto' }}>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 lg:gap-12">
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill={GOLD} /></svg>
+                <span style={{ color: 'rgba(253,196,31,0.7)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.4em', textTransform: 'uppercase' }}>
+                  Let's Build Together
+                </span>
+              </div>
+              <h2 style={{
+                color: '#fff',
+                fontSize: 'clamp(2rem, 5vw, 4.5rem)',
+                fontWeight: 800, lineHeight: 1.05,
+                letterSpacing: '-0.03em', margin: 0,
+              }}>
+                Ready to start<br />your project?
+              </h2>
             </div>
-            <h2 style={{
-              color: '#fff',
-              fontSize: 'clamp(2rem, 5vw, 4.5rem)',
-              fontWeight: 800, lineHeight: 1.05,
-              letterSpacing: '-0.03em', margin: 0,
-            }}>
-              Ready to start<br />your project?
-            </h2>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
-            <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.9rem', lineHeight: 1.75, maxWidth: '36ch', margin: 0 }}>
-              From site assessment to final handover — we deliver premium infrastructure execution across India.
-            </p>
-            <Link href="/contact" style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
-              background: GOLD, color: DARK,
-              padding: '1.1rem 2.8rem', fontSize: '0.85rem', fontWeight: 700,
-              letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none',
-            }}>
-              Get in Touch
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 12H20M20 12L14 6M20 12L14 18" />
-              </svg>
-            </Link>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', alignItems: 'flex-start' }}>
+              <p style={{ color: 'rgba(255,255,255,0.35)', fontSize: '0.9rem', lineHeight: 1.75, maxWidth: '36ch', margin: 0 }}>
+                From site assessment to final handover — we deliver premium infrastructure execution across India.
+              </p>
+              <Link href="/contact" style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.75rem',
+                background: GOLD, color: DARK,
+                padding: '1.1rem 2.8rem', fontSize: '0.85rem', fontWeight: 700,
+                letterSpacing: '0.1em', textTransform: 'uppercase', textDecoration: 'none',
+              }}>
+                Get in Touch
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 12H20M20 12L14 6M20 12L14 18" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
