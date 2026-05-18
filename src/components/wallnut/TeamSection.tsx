@@ -17,8 +17,8 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} id="team" className="bg-white py-20">
-      <div className="px-8 lg:px-10">
+    <section ref={sectionRef} id="team" className="bg-white py-16 lg:py-20">
+      <div className="px-5 lg:px-10">
         <div className="max-w-[1440px] mx-auto">
           {/* Section header */}
           <div className="flex items-center gap-4 mb-12">
@@ -33,26 +33,22 @@ export default function TeamSection() {
           </div>
 
           {/* Content grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 mb-12">
             {/* Left - Heading + CTA */}
             <div className="flex flex-col justify-between gap-10">
               <h3
-                className={`text-[#202A30] font-medium transition-all duration-700 ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                className={`text-[#202A30] font-medium transition-all duration-1000 ${
+                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
-                style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', lineHeight: 1.35 }}
+                style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.5rem)', lineHeight: 1.25, letterSpacing: '-0.02em' }}
               >
-                Founded in 2021 by{' '}
-                <span className="font-bold">Mr. Debasis Mohapatra</span>
-                {' '}— an industry professional with{' '}
-                <span className="font-bold">28 years of corporate expertise</span>
-                {' '}— SAI AAKANKSHYA ASSOCIATES has become a trusted name in large-scale infrastructure execution across India.
+                Spearheaded by <span className="font-bold text-[#FDC41F]">Mr. Debasis Mohapatra</span>, whose <span className="font-bold">28 years of distinguished corporate leadership</span> have established SAI AAKANKSHYA ASSOCIATES as a premier powerhouse in elite infrastructure and monumental turnkey execution.
               </h3>
 
               {/* Founder details */}
               <div
-                className={`border-t border-[#698996]/20 pt-6 transition-all duration-700 ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                className={`border-t border-[#698996]/20 pt-6 transition-all duration-1000 ${
+                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{ transitionDelay: '0.2s' }}
               >
@@ -65,8 +61,8 @@ export default function TeamSection() {
 
               <Link
                 href="/about"
-                className={`inline-flex items-center gap-3 border border-[#202A30]/30 text-[#202A30] px-6 py-3 text-sm font-medium hover:border-[#202A30] transition-all duration-200 group w-fit ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                className={`inline-flex items-center gap-3 border border-[#202A30]/30 text-[#202A30] px-6 py-3 text-sm font-medium hover:border-[#202A30] transition-all duration-300 group w-fit ${
+                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{ transitionDelay: '0.3s' }}
               >
@@ -81,8 +77,8 @@ export default function TeamSection() {
 
             {/* Right - Founder portrait */}
             <div
-              className={`relative overflow-hidden transition-all duration-700 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`relative overflow-hidden transition-all duration-1000 ${
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ transitionDelay: '0.15s', minHeight: '380px' }}
             >
@@ -101,8 +97,8 @@ export default function TeamSection() {
 
           {/* Bottom - Corporate interior image */}
           <div
-            className={`relative overflow-hidden transition-all duration-700 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`relative overflow-hidden transition-all duration-1000 ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: '0.3s', height: 'clamp(280px, 35vw, 420px)' }}
           >

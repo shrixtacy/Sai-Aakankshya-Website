@@ -44,7 +44,7 @@ export default function AboutSection() {
   return (
     <section ref={sectionRef} id="about" className="bg-white">
       {/* Section header */}
-      <div className="px-8 lg:px-10 pt-16 pb-0">
+      <div className="px-5 lg:px-10 pt-16 pb-0">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex items-center gap-4 mb-0">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="#FDC41F">
@@ -60,29 +60,28 @@ export default function AboutSection() {
       </div>
 
       {/* Main content grid */}
-      <div className="px-8 lg:px-10 pt-12 pb-16">
+      <div className="px-5 lg:px-10 pt-12 pb-16">
         <div className="max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-20">
             {/* Left - Heading */}
             <div>
               <h3
-                className={`text-[#202A30] font-medium transition-all duration-700 ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                className={`text-[#202A30] font-medium transition-all duration-1000 ${
+                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
-                style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)', lineHeight: 1.35 }}
+                style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.6rem)', lineHeight: 1.25, letterSpacing: '-0.02em' }}
               >
-                SAI AAKANKSHYA ASSOCIATES is a leading execution and infrastructure solutions company delivering premium interior, exterior, ceiling, cladding, and civil construction projects across India.{' '}
-                <span className="font-bold">Founded in 2021</span> by Mr. Debasis Mohapatra, with 28 years of industry expertise.
+                Pioneering master-grade infrastructure execution across India. We merge <span className="font-bold text-[#FDC41F]">uncompromising technical precision</span> with architectural elegance, delivering monumental ceiling, cladding, civil, and turnkey interior solutions for the nation&apos;s most prestigious landmarks.
               </h3>
             </div>
 
             {/* Right - Logo + CTA */}
             <div
-              className={`flex flex-col items-center justify-center gap-6 rounded-sm transition-all duration-700 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`flex flex-col items-center justify-center gap-6 rounded-sm transition-all duration-1000 ${
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{
-                transitionDelay: '0.15s',
+                transitionDelay: '0.2s',
                 background: 'linear-gradient(135deg, #F5F4F0 0%, #eceae4 100%)',
                 padding: 'clamp(2rem, 4vw, 3.5rem)',
                 minHeight: '280px',
@@ -90,7 +89,7 @@ export default function AboutSection() {
             >
               {/* Logo */}
               <img
-                src="/assets/images/logo.png"
+                src="/assets/images/saia.png"
                 alt="SAI AAKANKSHYA ASSOCIATES — Premium Infrastructure Execution"
                 className="w-full object-contain"
                 style={{ height: 'clamp(120px, 16vw, 180px)' }}
@@ -108,7 +107,7 @@ export default function AboutSection() {
               {/* CTA */}
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-3 border border-[#202A30]/30 text-[#202A30] px-6 py-3 text-sm font-medium hover:border-[#202A30] hover:bg-[#202A30] hover:text-white transition-all duration-200 group"
+                className="inline-flex items-center gap-3 border border-[#202A30]/30 text-[#202A30] px-6 py-3 text-sm font-medium hover:border-[#202A30] hover:bg-[#202A30] hover:text-white transition-all duration-300 group"
               >
                 Get in touch
                 <span className="group-hover:translate-x-1 transition-transform duration-200">
@@ -130,7 +129,10 @@ export default function AboutSection() {
               <div
                 key={i}
                 className="relative overflow-hidden cursor-pointer group"
-                style={{ borderRight: i < 2 ? '1px solid rgba(105,137,150,0.2)' : 'none' }}
+                style={{
+                  borderRight: i < 2 ? '1px solid rgba(105,137,150,0.2)' : 'none',
+                  borderBottom: 'none',
+                }}
                 onMouseEnter={() => setHoveredIndex(i)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >

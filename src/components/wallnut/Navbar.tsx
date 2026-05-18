@@ -51,12 +51,12 @@ export default function Navbar() {
           isVisible
             ? 'translate-y-0 opacity-100' :'-translate-y-full opacity-0 pointer-events-none'
         } ${menuOpen ? 'bg-transparent' : 'bg-[#202A30]'}`}
-        style={{ padding: '1.25rem 2.5rem' }}
+        style={{ padding: '1rem 1.25rem' }}
       >
-        <div className="flex items-center justify-between max-w-[1440px] mx-auto">
+        <div className="flex items-center justify-between max-w-[1440px] mx-auto gap-3">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <WallnutLogo color="white" className="h-7 w-auto" />
+          <Link href="/" className="flex items-center flex-shrink-0">
+            <WallnutLogo color="white" className="h-6 w-auto" />
           </Link>
 
           {/* Desktop Nav Links */}
@@ -100,19 +100,36 @@ export default function Navbar() {
 
       {/* Mobile menu button — only on home, only when at top (before hero scroll) */}
       {isHome && (
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className={`fixed top-6 right-8 z-50 flex items-center gap-3 text-white lg:hidden transition-all duration-500 ${
-            pastHero || menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
-          }`}
-          aria-label="Toggle menu"
-        >
-          <span className="text-sm font-medium">Menu</span>
-          <div className="flex flex-col gap-1.5 w-6">
-            <span className="block h-px bg-white" />
-            <span className="block h-px bg-white" />
-          </div>
-        </button>
+        <>
+          {/* Mobile logo — top left, visible only before hero scroll */}
+          <Link
+            href="/"
+            className={`fixed top-4 left-5 z-50 lg:hidden transition-all duration-500 ${
+              pastHero || menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
+          >
+            <img
+              src="/assets/images/saia.png"
+              alt="SAI AAKANKSHYA ASSOCIATES"
+              style={{ width: '2.2rem', height: '2.2rem', objectFit: 'contain' }}
+            />
+          </Link>
+
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className={`fixed top-4 right-5 z-50 flex items-center gap-3 text-white lg:hidden transition-all duration-500 ${
+              pastHero || menuOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
+            }`}
+            aria-label="Toggle menu"
+          >
+            <span className="text-sm font-medium">Menu</span>
+            <div className="flex flex-col gap-1.5 w-6">
+              <span className="block h-px bg-white" />
+              <span className="block h-px bg-white" />
+            </div>
+          </button>
+        </>
       )}
 
       {/* Full Page Menu Overlay — slides in from RIGHT */}
@@ -158,8 +175,8 @@ export default function Navbar() {
           </div>
 
           {/* Right Column - Nav Links */}
-          <div className="flex flex-col justify-center items-center flex-1 px-12 py-24">
-            <nav className="space-y-1 mb-12 text-center">
+          <div className="flex flex-col justify-center items-center flex-1 px-6 lg:px-12 py-24">
+            <nav className="space-y-1 mb-12 text-center w-full">
               {navLinks?.map((link, i) => (
                 <Link
                   key={link?.href}
@@ -201,6 +218,13 @@ export default function Navbar() {
                 <path d="M4 12H20M20 12L14 6M20 12L14 18" />
               </svg>
             </Link>
+
+            {/* Mobile-only contact info */}
+            <div className="lg:hidden mt-8 text-center space-y-2">
+              <a href="tel:9040099001" className="block text-white/50 text-sm">+91 9040099001</a>
+              <a href="mailto:saiaakankshya.associates@gmail.com" className="block text-white/50 text-xs">saiaakankshya.associates@gmail.com</a>
+              <p className="text-white/25 text-xs mt-4">© SAI AAKANKSHYA ASSOCIATES 2024</p>
+            </div>
           </div>
         </div>
       </div>

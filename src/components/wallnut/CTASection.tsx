@@ -52,14 +52,14 @@ export default function CTASection() {
   };
 
   return (
-    <section ref={sectionRef} className="bg-[#202A30] py-20">
-      <div className="px-8 lg:px-10">
+    <section ref={sectionRef} className="bg-[#202A30] py-16 lg:py-20">
+      <div className="px-5 lg:px-10">
         <div className="max-w-[1440px] mx-auto">
           {/* Heading */}
           <div className="mb-12">
             <h2
-              className={`font-bold text-white transition-all duration-700 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`font-bold text-white transition-all duration-1000 ${
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ fontSize: 'clamp(2.5rem, 5.5vw, 5.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em', maxWidth: '900px' }}
             >
@@ -77,8 +77,8 @@ export default function CTASection() {
 
           {/* Hold-to-book CTA */}
           <div
-            className={`transition-all duration-700 ${
-              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            className={`transition-all duration-1000 ${
+              visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
             }`}
             style={{ transitionDelay: '0.3s' }}
           >
@@ -88,7 +88,7 @@ export default function CTASection() {
               onMouseLeave={endHold}
               onTouchStart={startHold}
               onTouchEnd={endHold}
-              className="relative inline-flex items-center gap-6 bg-[#FDC41F] text-[#202A30] font-semibold px-8 py-4 text-base overflow-hidden select-none cursor-pointer"
+              className="relative inline-flex items-center gap-6 bg-[#FDC41F] text-[#202A30] font-semibold px-8 py-4 text-base overflow-hidden select-none cursor-pointer w-full sm:w-auto"
               style={{ minWidth: '280px' }}
             >
               {/* Progress fill */}

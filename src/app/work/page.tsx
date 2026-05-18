@@ -4,165 +4,7 @@ import { useState } from 'react';
 import Navbar from '@/components/wallnut/Navbar';
 import Footer from '@/components/wallnut/Footer';
 import Link from 'next/link';
-
-const projects = [
-  {
-    id: 1,
-    name: 'Indira Gandhi International Airport',
-    type: 'Airport Infrastructure',
-    category: 'Government',
-    year: '2022',
-    location: 'New Delhi',
-    scope: 'Linear & Baffle Ceiling + Wall Cladding',
-    area: '5000+ sqm',
-    image: '/assets/images/Delhi T1.jpeg',
-    alt: 'Indira Gandhi International Airport T1 — ceiling and cladding execution.',
-    description: 'Large-scale airport infrastructure execution involving linear ceilings, baffle ceiling systems, and premium wall cladding solutions designed for high-footfall modern aviation environments.',
-  },
-  {
-    id: 2,
-    name: 'Rajiv Gandhi International Airport',
-    type: 'Airport Infrastructure',
-    category: 'Government',
-    year: '2021',
-    location: 'Hyderabad',
-    scope: 'Linear Ceiling',
-    area: '11000 sqm',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.13 PM.jpeg',
-    alt: 'Rajiv Gandhi International Airport Hyderabad — linear ceiling execution.',
-    description: 'Executed extensive linear ceiling systems across airport infrastructure spaces with precision-focused architectural finishing.',
-  },
-  {
-    id: 3,
-    name: 'Kempegowda International Airport',
-    type: 'Airport Infrastructure',
-    category: 'Government',
-    year: '2022',
-    location: 'Bangalore',
-    scope: 'Aluminium Tube Ceiling',
-    area: 'Large-scale',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.14 PM.jpeg',
-    alt: 'Kempegowda International Airport Bangalore — aluminium tube ceiling execution.',
-    description: 'Modern aluminium tube ceiling execution designed for premium airport interior aesthetics and structural durability.',
-  },
-  {
-    id: 4,
-    name: 'Chaudhary Charan Singh International Airport',
-    type: 'Airport Infrastructure',
-    category: 'Government',
-    year: '2023',
-    location: 'Lucknow',
-    scope: 'Baffle Ceiling',
-    area: '2000 sqm',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.14 PM (1).jpeg',
-    alt: 'CCS International Airport Lucknow — baffle ceiling execution.',
-    description: 'Delivered advanced baffle ceiling systems for airport infrastructure with emphasis on acoustics, design uniformity, and large-scale execution quality.',
-  },
-  {
-    id: 5,
-    name: 'KIIT University',
-    type: 'Educational Institution',
-    category: 'Institutional',
-    year: '2020',
-    location: 'Bhubaneswar',
-    scope: 'False Ceiling — 600×600 HDI Systems',
-    area: '1000 sqm',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.16 PM.jpeg',
-    alt: 'KIIT University Bhubaneswar — HDI false ceiling systems.',
-    description: 'Executed high-quality HDI false ceiling systems for KIIT University, delivering clean architectural finishing and durable execution across educational infrastructure spaces.',
-  },
-  {
-    id: 6,
-    name: 'Coconut Peninsula Resort',
-    type: 'Hospitality',
-    category: 'Commercial',
-    year: '2022',
-    location: 'Tangi, Odisha',
-    scope: 'Linear Metal & Gypsum Ceiling',
-    area: '1200 sqm',
-    image: '/assets/images/coconut peninsula resort.jpg',
-    alt: 'Coconut Peninsula Resort Tangi Odisha — premium interior execution.',
-    description: 'Delivered premium hospitality interior execution featuring gypsum ceiling systems, linear metal ceiling installations, and sophisticated resort interior finishing.',
-  },
-  {
-    id: 7,
-    name: 'Babasaheb Ambedkar Bus Terminal',
-    type: 'Public Infrastructure',
-    category: 'Government',
-    year: '2023',
-    location: 'India',
-    scope: 'Baffle Ceiling',
-    area: '3000 sqm',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.19 PM.jpeg',
-    alt: 'Babasaheb Ambedkar Bus Terminal — large-scale baffle ceiling execution.',
-    description: 'Executed high-scale public infrastructure ceiling systems enhancing passenger environment quality and architectural appeal.',
-  },
-  {
-    id: 8,
-    name: 'DN Regalia Mall',
-    type: 'Commercial',
-    category: 'Commercial',
-    year: '2023',
-    location: 'Bhubaneswar',
-    scope: 'Aluminium Facade Work',
-    area: '1000 sqm',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.20 PM.jpeg',
-    alt: 'DN Regalia Mall Bhubaneswar — aluminium facade execution.',
-    description: 'Modern aluminium facade execution for commercial infrastructure with emphasis on contemporary architectural identity.',
-  },
-  {
-    id: 9,
-    name: 'Nandankanan Zoological Park',
-    type: 'Government Infrastructure',
-    category: 'Government',
-    year: '2023',
-    location: 'Bhubaneswar',
-    scope: 'Wall Cladding & Metal Ceiling',
-    area: 'Large-scale',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.22 PM.jpeg',
-    alt: 'Nandankanan Zoological Park Bhubaneswar — wall cladding and metal ceiling.',
-    description: 'Specialized wall cladding and ceiling execution for public infrastructure spaces designed to ensure durability and modern visual appeal.',
-  },
-  {
-    id: 10,
-    name: 'Odisha Mining Corporation',
-    type: 'Corporate Office',
-    category: 'Commercial',
-    year: '2022',
-    location: 'Odisha',
-    scope: 'Office & Interior Work',
-    area: 'Corporate scale',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.17 PM.jpeg',
-    alt: 'Odisha Mining Corporation — premium office interior execution.',
-    description: 'Premium office and interior infrastructure execution focused on functional corporate environments and refined interior finishing.',
-  },
-  {
-    id: 11,
-    name: 'Mission Shakti Café, Anandvan',
-    type: 'Public Hospitality',
-    category: 'Commercial',
-    year: '2023',
-    location: 'Odisha',
-    scope: 'Interior & Exterior Work',
-    area: 'Full execution',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.16 PM.jpeg',
-    alt: 'Mission Shakti Café Anandvan — complete interior and exterior execution.',
-    description: 'Complete interior and exterior execution for a public hospitality initiative, blending functionality with welcoming architectural aesthetics.',
-  },
-  {
-    id: 12,
-    name: 'OPTCL / Tata Power / Power Grid',
-    type: 'Power Sector',
-    category: 'Government',
-    year: '2021',
-    location: 'Pan-India',
-    scope: 'Civil Construction Works',
-    area: 'Multiple sites',
-    image: '/assets/images/WhatsApp Image 2026-05-11 at 10.01.22 PM.jpeg',
-    alt: 'Civil infrastructure — OPTCL, Tata Power, Power Grid.',
-    description: 'Executed civil infrastructure projects for major power and utility organizations with focus on reliability, structural quality, and execution efficiency.',
-  },
-];
+import { projects } from '@/data/projects';
 
 const categories = ['All', 'Government', 'Commercial', 'Institutional'];
 
@@ -297,114 +139,119 @@ export default function WorkPage() {
             background: 'rgba(105,137,150,0.2)',
           }}>
             {filtered.map((project) => (
-              <div
+              <Link
+                href={`/work/${project.id}`}
                 key={project.id}
-                onMouseEnter={() => setHoveredId(project.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                style={{
-                  background: '#ffffff',
-                  cursor: 'pointer', position: 'relative', overflow: 'hidden',
-                  transition: 'background 0.3s ease',
-                }}
+                style={{ textDecoration: 'none', display: 'block' }}
               >
-                {/* Image */}
-                <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '16/10' }}>
-                  <img
-                    src={project.image}
-                    alt={project.alt}
-                    style={{
-                      width: '100%', height: '100%', objectFit: 'cover', display: 'block',
-                      transition: 'transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)',
-                      transform: hoveredId === project.id ? 'scale(1.06)' : 'scale(1)',
-                    }}
-                  />
-                  {/* base overlay */}
-                  <div style={{
-                    position: 'absolute', inset: 0,
-                    background: 'linear-gradient(to top, rgba(32,42,48,0.8) 0%, rgba(32,42,48,0.05) 50%, transparent 100%)',
-                  }} />
-                  {/* hover overlay */}
-                  <div style={{
-                    position: 'absolute', inset: 0,
-                    background: 'rgba(32,42,48,0.55)',
-                    opacity: hoveredId === project.id ? 1 : 0,
-                    transition: 'opacity 0.35s ease',
-                    display: 'flex', flexDirection: 'column',
-                    justifyContent: 'flex-end', padding: '1.5rem',
-                  }}>
-                    <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.78rem', lineHeight: 1.65, marginBottom: '1rem' }}>
-                      {project.description}
-                    </p>
-                    <span style={{
-                      display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
-                      color: '#FDC41F', fontSize: '0.7rem', fontWeight: 700,
-                      letterSpacing: '0.1em', textTransform: 'uppercase',
-                    }}>
-                      View Project
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 12H20M20 12L14 6M20 12L14 18" />
-                      </svg>
-                    </span>
-                  </div>
-                  {/* year badge */}
-                  <div style={{
-                    position: 'absolute', top: '1rem', right: '1rem',
-                    background: 'rgba(32,42,48,0.75)', backdropFilter: 'blur(8px)',
-                    padding: '0.25rem 0.6rem',
-                    color: 'rgba(255,255,255,0.7)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.1em',
-                  }}>
-                    {project.year}
-                  </div>
-                </div>
-
-                {/* Card body */}
-                <div style={{ padding: '1.5rem 1.75rem 1.75rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#FDC41F', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em' }}>
-                      {String(project.id).padStart(2, '0')}
-                    </span>
-                    <span style={{
-                      color: '#698996', fontSize: '0.6rem', fontWeight: 500,
-                      letterSpacing: '0.12em', textTransform: 'uppercase',
-                      border: '1px solid rgba(105,137,150,0.3)', padding: '0.2rem 0.55rem',
-                    }}>
-                      {project.category}
-                    </span>
-                  </div>
-                  <h3 style={{
-                    color: '#202A30', fontSize: 'clamp(1rem,1.4vw,1.15rem)',
-                    fontWeight: 700, lineHeight: 1.3, letterSpacing: '-0.01em', marginBottom: '0.6rem',
-                  }}>
-                    {project.name}
-                  </h3>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-                    <span style={{ color: '#698996', fontSize: '0.72rem' }}>{project.location}</span>
-                    <span style={{ color: 'rgba(105,137,150,0.4)', fontSize: '0.6rem' }}>·</span>
-                    <span style={{ color: '#698996', fontSize: '0.72rem' }}>{project.area}</span>
-                  </div>
-                  <div style={{
-                    borderTop: '1px solid rgba(105,137,150,0.15)', paddingTop: '0.75rem',
-                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                  }}>
-                    <span style={{ color: 'rgba(105,137,150,0.6)', fontSize: '0.68rem', letterSpacing: '0.05em' }}>
-                      {project.scope}
-                    </span>
+                <div
+                  onMouseEnter={() => setHoveredId(project.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  style={{
+                    background: '#ffffff',
+                    cursor: 'pointer', position: 'relative', overflow: 'hidden',
+                    transition: 'background 0.3s ease',
+                  }}
+                >
+                  {/* Image */}
+                  <div style={{ position: 'relative', overflow: 'hidden', aspectRatio: '16/10' }}>
+                    <img
+                      src={project.image}
+                      alt={project.alt}
+                      style={{
+                        width: '100%', height: '100%', objectFit: 'cover', display: 'block',
+                        transition: 'transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94)',
+                        transform: hoveredId === project.id ? 'scale(1.06)' : 'scale(1)',
+                      }}
+                    />
+                    {/* base overlay */}
                     <div style={{
-                      width: '1.8rem', height: '1.8rem',
-                      border: `1px solid ${hoveredId === project.id ? '#FDC41F' : 'rgba(105,137,150,0.3)'}`,
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      background: hoveredId === project.id ? '#FDC41F' : 'transparent',
-                      transition: 'all 0.25s ease',
+                      position: 'absolute', inset: 0,
+                      background: 'linear-gradient(to top, rgba(32,42,48,0.8) 0%, rgba(32,42,48,0.05) 50%, transparent 100%)',
+                    }} />
+                    {/* hover overlay */}
+                    <div style={{
+                      position: 'absolute', inset: 0,
+                      background: 'rgba(32,42,48,0.55)',
+                      opacity: hoveredId === project.id ? 1 : 0,
+                      transition: 'opacity 0.35s ease',
+                      display: 'flex', flexDirection: 'column',
+                      justifyContent: 'flex-end', padding: '1.5rem',
                     }}>
-                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
-                        stroke={hoveredId === project.id ? '#202A30' : '#698996'}
-                        strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M4 12H20M20 12L14 6M20 12L14 18" />
-                      </svg>
+                      <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.78rem', lineHeight: 1.65, marginBottom: '1rem' }}>
+                        {project.description}
+                      </p>
+                      <span style={{
+                        display: 'inline-flex', alignItems: 'center', gap: '0.4rem',
+                        color: '#FDC41F', fontSize: '0.7rem', fontWeight: 700,
+                        letterSpacing: '0.1em', textTransform: 'uppercase',
+                      }}>
+                        View Project
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 12H20M20 12L14 6M20 12L14 18" />
+                        </svg>
+                      </span>
+                    </div>
+                    {/* year badge */}
+                    <div style={{
+                      position: 'absolute', top: '1rem', right: '1rem',
+                      background: 'rgba(32,42,48,0.75)', backdropFilter: 'blur(8px)',
+                      padding: '0.25rem 0.6rem',
+                      color: 'rgba(255,255,255,0.7)', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.1em',
+                    }}>
+                      {project.year}
+                    </div>
+                  </div>
+
+                  {/* Card body */}
+                  <div style={{ padding: '1.5rem 1.75rem 1.75rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                      <span style={{ color: '#FDC41F', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.15em' }}>
+                        {String(project.id).padStart(2, '0')}
+                      </span>
+                      <span style={{
+                        color: '#698996', fontSize: '0.6rem', fontWeight: 500,
+                        letterSpacing: '0.12em', textTransform: 'uppercase',
+                        border: '1px solid rgba(105,137,150,0.3)', padding: '0.2rem 0.55rem',
+                      }}>
+                        {project.category}
+                      </span>
+                    </div>
+                    <h3 style={{
+                      color: '#202A30', fontSize: 'clamp(1rem,1.4vw,1.15rem)',
+                      fontWeight: 700, lineHeight: 1.3, letterSpacing: '-0.01em', marginBottom: '0.6rem',
+                    }}>
+                      {project.name}
+                    </h3>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
+                      <span style={{ color: '#698996', fontSize: '0.72rem' }}>{project.location}</span>
+                      <span style={{ color: 'rgba(105,137,150,0.4)', fontSize: '0.6rem' }}>·</span>
+                      <span style={{ color: '#698996', fontSize: '0.72rem' }}>{project.area}</span>
+                    </div>
+                    <div style={{
+                      borderTop: '1px solid rgba(105,137,150,0.15)', paddingTop: '0.75rem',
+                      display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                    }}>
+                      <span style={{ color: 'rgba(105,137,150,0.6)', fontSize: '0.68rem', letterSpacing: '0.05em' }}>
+                        {project.scope}
+                      </span>
+                      <div style={{
+                        width: '1.8rem', height: '1.8rem',
+                        border: `1px solid ${hoveredId === project.id ? '#FDC41F' : 'rgba(105,137,150,0.3)'}`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        background: hoveredId === project.id ? '#FDC41F' : 'transparent',
+                        transition: 'all 0.25s ease',
+                      }}>
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none"
+                          stroke={hoveredId === project.id ? '#202A30' : '#698996'}
+                          strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 12H20M20 12L14 6M20 12L14 18" />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

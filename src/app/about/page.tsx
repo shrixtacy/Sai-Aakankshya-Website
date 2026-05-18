@@ -65,7 +65,57 @@ const values = [
   { title: 'Long-term Relationships', description: 'Client satisfaction and enduring partnerships are at the core of everything we do.' },
 ];
 
-const partners = ['HunterDouglas', 'Ramco', 'Saint Gobain', 'Philips', 'Armstrong'];
+const partners = [
+  {
+    name: 'HunterDouglas',
+    logo: (
+      <svg viewBox="0 0 400 60" style={{ width: '100%', height: 'clamp(28px, 3vw, 38px)' }}>
+        <text x="50%" y="52%" dominantBaseline="middle" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="38" fill="currentColor" letterSpacing="1">HunterDouglas</text>
+      </svg>
+    ),
+  },
+  {
+    name: 'Ramco',
+    logo: (
+      <svg viewBox="0 0 300 60" style={{ width: '100%', height: 'clamp(28px, 3vw, 38px)' }}>
+        <text x="50%" y="52%" dominantBaseline="middle" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="900" fontSize="46" fill="currentColor" letterSpacing="2">RAMCO</text>
+      </svg>
+    ),
+  },
+  {
+    name: 'Saint Gobain',
+    logo: (
+      <svg viewBox="0 0 350 80" style={{ width: '100%', height: 'clamp(36px, 4vw, 52px)' }}>
+        <g fill="currentColor" transform="translate(135, 0)">
+          <path d="M10,35 C25,10 55,10 70,35 L62,35 C50,18 30,18 18,35 Z" />
+          <path d="M22,35 C32,22 48,22 58,35 L52,35 C45,26 35,26 28,35 Z" />
+          <rect x="15" y="36" width="50" height="6" />
+        </g>
+        <text x="50%" y="70" dominantBaseline="middle" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="26" fill="currentColor" letterSpacing="4">SAINT-GOBAIN</text>
+      </svg>
+    ),
+  },
+  {
+    name: 'Philips',
+    logo: (
+      <svg viewBox="0 0 300 60" style={{ width: '100%', height: 'clamp(28px, 3vw, 38px)' }}>
+        <text x="50%" y="52%" dominantBaseline="middle" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="900" fontSize="44" fill="currentColor" letterSpacing="6">PHILIPS</text>
+      </svg>
+    ),
+  },
+  {
+    name: 'Armstrong',
+    logo: (
+      <svg viewBox="0 0 350 60" style={{ width: '100%', height: 'clamp(28px, 3vw, 38px)' }}>
+        <g fill="currentColor" transform="translate(30, 10)">
+          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" strokeWidth="4"/>
+          <text x="20" y="27" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="900" fontSize="22">A</text>
+        </g>
+        <text x="205" y="32" dominantBaseline="middle" textAnchor="middle" fontFamily="Inter, sans-serif" fontWeight="800" fontSize="36" fill="currentColor" letterSpacing="1">Armstrong</text>
+      </svg>
+    ),
+  },
+];
 
 /* ── eyebrow — dark text on light bg, white text on dark bg ── */
 function Eyebrow({ label, light = false }: { label: string; light?: boolean }) {
@@ -355,16 +405,27 @@ export default function AboutPage() {
                   onMouseLeave={() => setHoveredPartner(null)}
                   style={{
                     background: hoveredPartner === i ? WHITE : MID,
-                    padding: '2.5rem 1.5rem', textAlign: 'center',
-                    transition: 'background 0.3s ease', cursor: 'default',
+                    padding: '2.5rem 1.5rem',
+                    display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+                    gap: '1.25rem', height: '100%', minHeight: '160px',
+                    color: hoveredPartner === i ? DARK : BODY,
+                    transition: 'all 0.3s ease', cursor: 'default',
                   }}
                 >
-                  <span style={{
-                    color: hoveredPartner === i ? DARK : BODY,
-                    fontSize: 'clamp(0.85rem,1.1vw,1rem)', fontWeight: 700,
-                    letterSpacing: '-0.01em', transition: 'color 0.3s ease',
+                  <div style={{
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    width: '100%',
+                    opacity: hoveredPartner === i ? 1 : 0.6,
+                    transform: hoveredPartner === i ? 'scale(1.05)' : 'scale(1)',
+                    transition: 'all 0.3s ease',
                   }}>
-                    {brand}
+                    {brand.logo}
+                  </div>
+                  <span style={{
+                    fontSize: 'clamp(0.75rem,0.9vw,0.85rem)', fontWeight: 600,
+                    letterSpacing: '0.05em', transition: 'color 0.3s ease',
+                  }}>
+                    {brand.name}
                   </span>
                 </div>
               </FadeUp>

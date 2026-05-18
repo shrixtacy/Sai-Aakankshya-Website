@@ -72,8 +72,8 @@ export default function PortfolioSection() {
   const next = () => setActiveIndex((i) => (i + 1) % projects?.length);
 
   return (
-    <section ref={sectionRef} id="work" className="bg-[#202A30] py-20">
-      <div className="px-8 lg:px-10">
+    <section ref={sectionRef} id="work" className="bg-[#202A30] py-16 lg:py-20">
+      <div className="px-5 lg:px-10">
         <div className="max-w-[1440px] mx-auto">
           {/* Section header */}
           <div className="flex items-center gap-4 mb-10">
@@ -91,8 +91,8 @@ export default function PortfolioSection() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left - Image */}
             <div
-              className={`relative overflow-hidden transition-all duration-700 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              className={`relative overflow-hidden transition-all duration-1000 ${
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
               }`}
               style={{ aspectRatio: '4/3' }}
             >
@@ -133,18 +133,18 @@ export default function PortfolioSection() {
                       activeIndex === i ? 'opacity-100' : 'opacity-40 hover:opacity-70'
                     }`}
                   >
-                    <div className="flex items-center justify-between gap-4">
+                    <div className="flex items-center justify-between gap-2">
                       <span
-                        className={`font-medium transition-colors text-sm lg:text-base ${
+                        className={`font-medium transition-colors text-sm ${
                           activeIndex === i ? 'text-white' : 'text-white/60'
                         }`}
                       >
                         {project?.name}
                       </span>
-                      <div className="flex items-center gap-3 lg:gap-4 text-xs lg:text-sm text-white/40 flex-shrink-0">
-                        <span>{project?.type}</span>
+                      <div className="flex items-center gap-2 text-xs text-white/40 flex-shrink-0">
+                        <span className="hidden sm:inline">{project?.type}</span>
                         <span>{project?.year}</span>
-                        <span className="hidden sm:inline">{project?.location}</span>
+                        <span className="hidden md:inline">{project?.location}</span>
                       </div>
                     </div>
                   </button>

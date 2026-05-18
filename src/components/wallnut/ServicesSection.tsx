@@ -58,7 +58,7 @@ export default function ServicesSection() {
   return (
     <section ref={sectionRef} id="services" className="bg-[#F5F4F0]">
       {/* Section header */}
-      <div className="px-8 lg:px-10 pt-16 pb-0">
+      <div className="px-5 lg:px-10 pt-16 pb-0">
         <div className="max-w-[1440px] mx-auto">
           <div className="flex items-center gap-4">
             <svg width="12" height="12" viewBox="0 0 12 12" fill="#FDC41F">
@@ -119,8 +119,8 @@ export default function ServicesSection() {
             {servicesList?.map((service, i) => (
               <div
                 key={i}
-                className={`p-10 lg:p-12 transition-all duration-700 ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                className={`p-6 lg:p-12 transition-all duration-1000 ${
+                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                 }`}
                 style={{
                   borderRight: i % 2 === 0 ? '1px solid rgba(105,137,150,0.2)' : 'none',
@@ -151,7 +151,7 @@ export default function ServicesSection() {
       </div>
 
       {/* CTA strip */}
-      <div className="bg-[#F5F4F0] px-8 lg:px-10 py-12">
+      <div className="bg-[#F5F4F0] px-5 lg:px-10 py-12">
         <div className="max-w-[1440px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p
             className="text-[#202A30] font-medium"

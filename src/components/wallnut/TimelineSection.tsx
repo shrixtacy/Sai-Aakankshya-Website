@@ -122,15 +122,46 @@ export default function TimelineSection() {
   const active = timelineItems[activeIndex];
 
   return (
-    /*
-      outerRef  — tall scroll container (100vh + totalSlide px)
-      stickyRef — CSS sticky 100vh panel, pinned by GSAP
-      trackRef  — horizontal strip of 4 × 100vw slides
-    */
     <div
       ref={outerRef}
       style={{ position: 'relative', background: '#fff' }}
     >
+      {/* ── Mobile fallback (hidden on lg+) ─────────────────────── */}
+      <div className="lg:hidden bg-white">
+        {timelineItems.map((item, i) => (
+          <div key={i} style={{ borderBottom: '1px solid rgba(105,137,150,0.12)' }}>
+            <div style={{ position: 'relative', height: '240px', overflow: 'hidden' }}>
+              <img src={item.posterUrl} alt={item.heading} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'rgba(32,42,48,0.4)' }} />
+              <span style={{
+                position: 'absolute', bottom: '1rem', left: '1rem',
+                background: '#FDC41F', color: '#202A30',
+                fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.1em',
+                textTransform: 'uppercase', padding: '0.3rem 0.75rem',
+              }}>{item.step}</span>
+            </div>
+            <div style={{ padding: '1.5rem 1.25rem 2rem' }}>
+              <h2 style={{ fontSize: '1.6rem', fontWeight: 700, color: '#202A30', lineHeight: 1.15, letterSpacing: '-0.02em', marginBottom: '0.75rem', fontFamily: 'Inter, sans-serif' }}>
+                {item.heading}
+              </h2>
+              <p style={{ fontSize: '0.875rem', color: '#698996', lineHeight: 1.7, fontFamily: 'Inter, sans-serif', marginBottom: '1.25rem' }}>
+                {item.description}
+              </p>
+              <div style={{ borderTop: '1px solid rgba(105,137,150,0.15)' }}>
+                {item.highlights.map((h, j) => (
+                  <div key={j} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.6rem 0', borderBottom: '1px solid rgba(105,137,150,0.1)' }}>
+                    <span style={{ fontSize: '0.6rem', color: '#698996', textTransform: 'uppercase', letterSpacing: '0.12em', fontFamily: 'Inter, sans-serif' }}>{h.label}</span>
+                    <span style={{ fontSize: '0.72rem', color: '#202A30', fontWeight: 600, fontFamily: 'Inter, sans-serif', textAlign: 'right', maxWidth: '55%' }}>{h.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* ── Desktop sticky scroll (hidden on mobile) ─────────────── */}
+      <div className="hidden lg:block">
       {/* ── Sticky panel ─────────────────────────────────────────── */}
       <div
         ref={stickyRef}
@@ -192,7 +223,6 @@ export default function TimelineSection() {
                   zIndex    : 2,
                 }}>
                   <span style={{
-                    color        : '#fff',
                     fontSize     : '0.7rem',
                     fontWeight   : 600,
                     letterSpacing: '0.12em',
@@ -377,6 +407,7 @@ export default function TimelineSection() {
           to   { opacity: 1; transform: translateY(0);    }
         }
       `}</style>
+      </div>{/* end desktop wrapper */}
     </div>
   );
 }

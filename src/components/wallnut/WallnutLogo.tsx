@@ -9,7 +9,7 @@ export default function WallnutLogo({ color = 'white', className = '' }: Wallnut
   return (
     <span className={`inline-flex items-center gap-3 ${className}`} style={{ lineHeight: 1 }}>
       <img
-        src="/assets/images/logo.png"
+        src="/assets/images/saia.png"
         alt="SAI AAKANKSHYA ASSOCIATES"
         style={{
           width: '2.5rem',
@@ -18,7 +18,9 @@ export default function WallnutLogo({ color = 'white', className = '' }: Wallnut
           flexShrink: 0,
         }}
       />
+      {/* Hide text on mobile, show on lg+ */}
       <span
+        className="hidden lg:inline"
         style={{
           color,
           fontWeight: 700,
